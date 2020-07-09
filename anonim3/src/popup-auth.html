@@ -1,0 +1,88 @@
+<div class="white-popup popup-auth popup-animation">
+  <div class="white-popup-inner">
+    <div class="ui-tabs popup-auth-tabs">
+      <a href="#tab-reg">Регистрация</a>
+      <a href="#tab-login">Вход</a>
+    </div>
+
+    <div id="tab-reg">
+      <form action="" id="register_form">
+        <div class="form-group">
+          <div class="ui-label">Логин <span class="req">*</span></div>
+          <input type="text" name="f_login" required class="form-control">
+        </div>
+        <div class="form-group">
+          <div class="ui-label">Пароль <span class="req">*</span></div>
+          <input type="password" name="f_pass" id="login_pass" required class="form-control">
+        </div>
+        <div class="form-group">
+          <div class="ui-label">Повторите пароль <span class="req">*</span></div>
+          <input type="password" name="f_confirm_pass" required class="form-control">
+        </div>
+        <div class="ui-field-btn ui-field">
+          <button class="btn btn-block">Зарегестрироваться</button>
+        </div>
+        <label for="f_agree" class="label-styler">
+          <input type="checkbox" name="f_agree" id="f_agree" checked>
+          <span>Я ознакомился с <a href="#">соглашением на обработку персональных данных</a> и принимаю его условия.</span>
+        </label>
+      </form>
+    </div>
+
+    <div id="tab-login">
+      <form action="" id="login_form">
+        <div class="form-group">
+          <div class="ui-label">Логин <span class="req">*</span></div>
+          <input type="text" name="f_login" required class="form-control">
+        </div>
+        <div class="form-group">
+          <div class="ui-label">Пароль <span class="req">*</span></div>
+          <input type="password" name="f_password" required class="form-control">
+        </div>
+        <div class="ui-field-btn ui-field">
+          <button class="btn btn-block">Войти</button>
+        </div>
+        <label for="f_remember" class="label-styler">
+          <input type="checkbox" name="f_remember" id="f_agree">
+          <span>Запомнить меня</span>
+        </label>
+      </form>
+    </div>
+  </div>
+  <script>
+    jQuery(document).ready(function($){
+      $('.popup-auth-tabs a').Tabs();
+
+      $('.white-popup input[type="checkbox"], .white-popup input[type="radio"], .white-popup input[type="file"], .white-popup select').not('.not-styler').styler({
+        singleSelectzIndex: '1',
+      });
+
+      $('#register_form').validate({
+        rules: {
+          f_pass: {
+            minlength: 8
+          },
+          f_confirm_pass: {
+            equalTo: $('#login_pass')
+          },
+          f_agree: {
+            required: true
+          }
+        },
+        messages: {
+          f_confirm_pass: {
+            equalTo: "Пароли не совпадают"
+          }
+        }
+      })
+
+      $('#login_form').validate({
+        rules: {
+          f_password: {
+            minlength: 8
+          }
+        }
+      })
+    });
+  </script>
+</div>
