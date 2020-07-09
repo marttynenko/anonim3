@@ -628,8 +628,8 @@
 	margin-bottom: -100px;
 }
 .screen-prices-inner {
-	background: url(../images/iphone.png) 7% 0 no-repeat;
-	background-size: 480px;
+	//background: url(../images/iphone.png) 7% 0 no-repeat;
+	//background-size: 480px;
 	padding-bottom: 200px;
 }
 .flx-prices-descr {
@@ -834,4 +834,90 @@
 	&::-moz-placeholder {color: #FFF}
 	&:-moz-placeholder {color: #FFF}
 	&:-ms-input-placeholder {color: #FFF}
+}
+
+.chat {
+	position: relative;
+	display: inline-block;
+	width: 320px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	transform: rotate(-14deg) translate(10%, -2%);
+
+	&-msgs {
+		position: absolute;
+		left: 25px;
+		top: 110px;
+		right: 25px;
+		bottom: 65px;
+		overflow-y: auto;
+	}
+	&-title {
+		position: absolute;
+		left: 25px;
+		top: 62px;
+		right: 25px;
+		text-align: center;
+		font-weight: 700;
+		color: $font;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include fz(16);
+
+		&:before {
+			content: "";
+			position: relative;
+			top: -1px;
+			display: inline-block;
+			vertical-align: middle;
+			width: 24px;
+			height: 24px;
+			margin-right: 7px;
+			background: url(../images/logo-icon.svg) center no-repeat;
+			background-size: contain;
+		}
+	}
+	&-msg {
+		display: inline-block;
+		max-width: 85%;
+		@include fz(14);
+		padding: 17px 18px;
+		border-radius: 0px 10px 10px 10px;
+		color: #FFF;
+		background: #4b5387;
+		text-align: left;
+		line-height: 1.42;
+		
+		p {
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&-msg-wrapper {
+		margin-bottom: 17px;
+		text-align: left;
+
+		&.question {
+			text-align: right;
+
+			.chat-msg {
+				border-radius: 10px 0px 10px 10px;
+				background: #F2F2F2;
+				color: $font;
+			}
+		}
+	}
+}
+.chat-msgs::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+.chat-msgs::-webkit-scrollbar-thumb {
+	width: 0;
+	height: 0;
 }

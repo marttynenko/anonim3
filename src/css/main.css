@@ -184,7 +184,7 @@ footer.footer { background: #302B42; color: #fff; padding: 32px 0px 92px; positi
 
 .screen-prices { padding-bottom: 0; margin-bottom: -100px; }
 
-.screen-prices-inner { background: url(../images/iphone.png) 7% 0 no-repeat; background-size: 480px; padding-bottom: 200px; }
+.screen-prices-inner { padding-bottom: 200px; }
 
 .flx-prices-descr { flex: 0 0 39.5%; max-width: 39.5%; padding-right: 25px !important; }
 
@@ -259,6 +259,30 @@ footer.footer { background: #302B42; color: #fff; padding: 32px 0px 92px; positi
 .ui-input-primary:-moz-placeholder { color: #FFF; }
 
 .ui-input-primary:-ms-input-placeholder { color: #FFF; }
+
+.chat { position: relative; display: inline-block; width: 320px; max-width: 100%; margin-left: auto; margin-right: auto; transform: rotate(-14deg) translate(10%, -2%); }
+
+.chat-msgs { position: absolute; left: 25px; top: 110px; right: 25px; bottom: 65px; overflow-y: auto; }
+
+.chat-title { position: absolute; left: 25px; top: 62px; right: 25px; text-align: center; font-weight: 700; color: #302B42; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 16px; font-size: 1rem; }
+
+.chat-title:before { content: ""; position: relative; top: -1px; display: inline-block; vertical-align: middle; width: 24px; height: 24px; margin-right: 7px; background: url(../images/logo-icon.svg) center no-repeat; background-size: contain; }
+
+.chat-msg { display: inline-block; max-width: 85%; font-size: 14px; font-size: 0.875rem; padding: 17px 18px; border-radius: 0px 10px 10px 10px; color: #FFF; background: #4b5387; text-align: left; line-height: 1.42; }
+
+.chat-msg p { margin-bottom: 15px; }
+
+.chat-msg p:last-child { margin-bottom: 0; }
+
+.chat-msg-wrapper { margin-bottom: 17px; text-align: left; }
+
+.chat-msg-wrapper.question { text-align: right; }
+
+.chat-msg-wrapper.question .chat-msg { border-radius: 10px 0px 10px 10px; background: #F2F2F2; color: #302B42; }
+
+.chat-msgs::-webkit-scrollbar { width: 0; height: 0; }
+
+.chat-msgs::-webkit-scrollbar-thumb { width: 0; height: 0; }
 
 /* MFP
 ---------------------------*/
@@ -422,7 +446,8 @@ RESPONSIVE STYLES ----------------------- */
   .top-screen-cubes { margin-left: 0; padding-top: 0; }
   .top-screen-cubes .desktop-only { display: none; }
   .screen-red { margin: 40px 0; }
-  .screen-faq { margin-bottom: -40px; } }
+  .screen-faq { margin-bottom: -40px; }
+  .chat { margin-bottom: 30px; transform: rotate(-3deg); } }
 
 @media (max-width: 768px) { .top-screen-title { font-size: 40px; font-size: 2.5rem; }
   .top-screen-aftertitle { font-size: 20px; font-size: 1.25rem; margin-bottom: 30px; }

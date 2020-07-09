@@ -140,10 +140,11 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		const hash = $(this).attr('href');
 		if ($(hash).length) {
-			let offset = $(hash).offset().top;
-			$('html,body').animate({
-				scrollTop:offset-50
-			},300);
+			document.querySelector('#footer').scrollIntoView(false);
+			setTimeout(() => {
+				document.querySelector('body').scrollIntoView();
+				document.querySelector(hash).scrollIntoView({behavior: "smooth"});
+			},2);
 		}
 	})
 
